@@ -13,12 +13,12 @@ import devRoutes from "./routes/dev.js";
 dotenv.config();
 
 const app = express();
-app.use(express.json());
 app.use(cors({
   origin: ["http://localhost:5173", "https://course-feedback-app.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+app.use(express.json());
 app.use(morgan("dev"));
 
 // Basic route
